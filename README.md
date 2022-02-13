@@ -41,10 +41,17 @@ php artisan serve
 - go to
 ```
 http://127.0.0.1:8000/
+http://127.0.0.1:8000/admin/login
 ```
-
-
-
-
+- For trial
+```
+https://onlinebusesss.000webhostapp.com/public/login
+https://onlinebusesss.000webhostapp.com/public/admin/login
+```
+-Admin credentials 
+```
+email:admin@admin.com
+password:12345678
+```
 
 
