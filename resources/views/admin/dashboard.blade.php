@@ -34,7 +34,8 @@
             <div class="card">
 
                 <div style="font-weight:bold " class="card-header">
-                        <span style="margin-top:20px">Route :{{$reservation['from']}} - to - {{$reservation['to']}}</span>
+
+                        <span style="margin-top:20px">Route :{{$reservation['route']['from']}} - {{$reservation['route']['to']}}</span>
                         <br>
                         <span style="margin-top:20px">Time : {{$reservation['time']}}</span>
 
@@ -46,7 +47,7 @@
                 <div class="card-body">
 <p> <span style="font-weight:bold">User: </span>{{$reservation['name']}}</p>
 <p> <span style="font-weight:bold">email: </span> {{$reservation['email']}}</p>
-<p> <span style="font-weight:bold">Price: </span> {{$reservation['price']}} L.E</p>
+<p> <span style="font-weight:bold">Price: </span> {{$reservation['route']['price']}} L.E</p>
 <p> <span style="font-weight:bold">Receipt Number: </span> {{$reservation['receipt_number']}}</p>
                 </div>
             </div>

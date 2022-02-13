@@ -39,19 +39,19 @@ class ReservationController extends Controller
     public function SerachByCode(Request $request)
     {
 
-
-        $trip = Reservation::
+        $reservation = Reservation::
           join('users', 'users.id', '=', 'reservations.user_id')
            ->join ('times', 'times.id', '=', 'reservations.reservation_id')
         //    ->join ('routes', 'times.routes_id', '=', 'routes.id')
         ->where('receipt_number', '=', $request->search)
-            ->select('*')
+                       ->select('reservations.id','times.time','times.route_id','users.name','users.email','reservations.receipt_number')
             ->first();
             // return $trips;
 
-    $route=Route::where('id','=',$trip->route_id)->first();
-    $reservations[] = (array_merge($trip->toArray(), $route->toArray()));
-// return $reservations;
+    $reservation['route']=Route::where('id','=',$reservation->route_id)->first();
+   $reservations[]=$reservation;
+    // $reservations[]= (array_merge($trip->toArray(), $route->toArray()));
+//  return $reservations;
         return view('admin.dashboard',compact('reservations'));
 
     }
