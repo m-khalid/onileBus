@@ -1,0 +1,10 @@
+.dropdown-menu label {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+
+.body {
+    background-color: black;
+}
