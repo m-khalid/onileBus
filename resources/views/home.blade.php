@@ -24,12 +24,13 @@
    <form method="GET" action="{{ route('route', ['route']) }}">
     @csrf
  {{ method_field('GET') }}
+ <i class="fa fa-home" style="font-size:20px"></i>
     <span style="font-weight: bold;font-size:24px; color:#700000 ">{{ $route->from}} - </span>
 <text style="font-weight: bold;font-size:24px;color:#005916">{{ $route->to }}</text>
     <br>
     <span style=" margin-left:10px;font-weight: bold;font-size:16px; color:#505008" >{{ $route->description }}</span>
     <div style="margin:-20px 0 0 600px" >
-<span style="font-weight:bold;font-size:18px; margin:0 0 0 15px " >{{ $route->price}} EGP</span>
+<span style="font-weight: bold;font-size:px; margin:0 0 0 15px " >{{ $route->price}} EGP</span>
 </div>
 
     <br>
