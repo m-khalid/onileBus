@@ -38,7 +38,7 @@ class ReservationController extends Controller
     }
     public function SerachByCode(Request $request)
     {
-
+        $reservations = null;
         $reservation = Reservation::
           join('users', 'users.id', '=', 'reservations.user_id')
            ->join ('times', 'times.id', '=', 'reservations.reservation_id')
@@ -47,11 +47,12 @@ class ReservationController extends Controller
                        ->select('reservations.id','times.time','times.route_id','users.name','users.email','reservations.receipt_number')
             ->first();
             // return $trips;
-
+if(!empty($reservation)){
     $reservation['route']=Route::where('id','=',$reservation->route_id)->first();
    $reservations[]=$reservation;
     // $reservations[]= (array_merge($trip->toArray(), $route->toArray()));
 //  return $reservations;
+}
         return view('admin.dashboard',compact('reservations'));
 
     }
