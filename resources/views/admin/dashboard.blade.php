@@ -1,3 +1,6 @@
+@extends('layouts.admin')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,8 @@
 </head>
 <body>
 
-                <div style="width:50%; margin:auto; font-weight:bold" class="card-header">
+                        <div style="width:50%; margin:-20px auto 0px auto; font-weight:bold" class="card-header">
+
 <a style="margin-left:40px; font-size: 20px; color:black; " href="{{ route('admin.dashboard') }}">Admin</a>
 
           <a style="margin-left:40%"  class="btn btn-secondary" href="{{ route('admin.add.route') }}">Add Route</a>
@@ -65,3 +69,4 @@
 @endif
 </body>
 </html>
+@endsection

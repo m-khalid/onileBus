@@ -38,7 +38,7 @@
 
 
     @if(Auth::user())
-        <a class="material-icons" href="{{ route('user.reservation', ['userId',Auth::user()->id]) }}" style="font-size:36px;margin-left:550px">notifications</a>
+        <a  href="{{ route('user.reservation', ['userId',Auth::user()->id]) }}" style=" font-size:16px;margin-left:500px">My Receipts</a>
     @endif
                 <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

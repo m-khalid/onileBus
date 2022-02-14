@@ -37,9 +37,11 @@
  @foreach ($route->times as $times)
  @if($loop->index > 2)
 @break; @endif
-    <span  style="margin-left:10px;  border-radius: 4px;border-style: outset; border-color: #E8E8E8;"> {{ $times->time}} </span>
+    <!-- <span  style="margin-left:10px;  border-radius: 4px;border-style: outset; border-color: #E8E8E8;"> {{ $times->time}} </span> -->
+    <a  class="btn btn-primary btn-sm" style="margin-left:20px;pointer-events: none" >{{$times->time}}</a>
+
 @endforeach
-    <a  href="{{ route('route', ['id',$route['id']]) }}"class="btn btn-primary btn-sm" style="margin-left:20px;background-color:#" >More ...</a> <!-- link for more details-->
+    <a  href="{{ route('route', ['id',$route['id']]) }}"style="margin-left:20px;text-decoration: underline" >More ...</a> <!-- link for more details-->
 <div style="margin:-40px 0 0px  600px">
        <a  href="{{ route('route', ['id',$route['id']]) }}"class="btn btn-success btn-sm" style="margin-left:10px; padding:7px 8px" >Book Now</a> <!-- link for more details-->
 

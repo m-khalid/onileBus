@@ -1,3 +1,6 @@
+@extends('layouts.admin')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,9 +30,10 @@ checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
     }
   </script>
 <body>
-        <div style="width:50%; margin:auto; font-weight:bold" class="card-header">
-<span style="margin-left:40px; font-size: 20px;">Admin</span>
-          <a class="btn btn-danger"style="margin-left:75%" href="/admin/logout" >Logout</a>
+        <div style="width:50%; margin:-20px auto 0px auto; font-weight:bold" class="card-header">
+<a style="margin-left:40px; font-size: 20px; color:black; " href="{{ route('admin.dashboard') }}">Admin</a>
+
+          <a class="btn btn-danger"style="margin-left:75%; margin-top:-10px" href="/admin/logout" >Logout</a>
 
 </div>
 <br>
@@ -126,3 +130,4 @@ checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
 </div>
 </body>
 </html>
+@endsection

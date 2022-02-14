@@ -12,11 +12,9 @@ class ReservationController extends Controller
       $this->middleware('auth');
     }
 
-    public function index(Request $request)
+    public function index()
     {
-
-        $uri = \Request::getRequestUri();
-        $id = parse_url($uri)['query'];
+        $id= Auth::user()->id;
        $reservations= Reservation::join ('times', 'times.id', '=', 'reservations.reservation_id')
         ->where('reservations.user_id','=',$id)->get();
         foreach ($reservations as $reservation)
@@ -34,10 +32,15 @@ class ReservationController extends Controller
     {
         // return $request->time;
 
-        $data=array('reservation_id'=>$request->time,'user_id'=>Auth::user()->id,'status'=>0,'receipt_number'=>rand(10000, 99999));
-       Reservation::insert($data);
+
+       $reservation= new Reservation;
+       $reservation->reservation_id=$request->time;
+       $reservation->status=0;
+       $reservation->user_id=Auth::user()->id;
+       $reservation->receipt_number=rand(10000, 99999);
+       $reservation->save();
         $message="pending";
-return redirect()->route('home')->with('alert', 'Pending Request');
+return $this->index();
 
     }
 

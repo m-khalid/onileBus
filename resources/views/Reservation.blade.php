@@ -14,10 +14,12 @@
                         <span style="margin-top:20px">Time : {{$reservation['time']}}</span>
                          <br>
                         <span >receipt number : {{$reservation['receipt_number']}}</span> </span>
+                        <br>
+                        <span >Reservation created : {{$reservation['created_at']}}</span> </span>
                         @if ($reservation['status'] == 0)
-                     <span style="margin: -66px  0 0 400px; width:102px;text-align:center;"class="btn btn-danger btn-lg">Pending<span>
+                     <span style="margin: -110px  0 0 400px; width:102px;text-align:center;"class="btn btn-danger btn-lg">Pending<span>
                          @else
-                     <span style="margin: -66px  0 0 400px; width:110px;text-align:center;"class="btn btn-success btn-lg">Accepted<span>
+                     <span style="margin: -116px  0 0 400px; width:110px;text-align:center;"class="btn btn-success btn-lg">Accepted<span>
 
                        @endif
                     <text style="margin-left: 200px;"></text>
