@@ -16,15 +16,14 @@ class ReservationController extends Controller
     {
         $id= Auth::user()->id;
        $reservations= Reservation::join ('times', 'times.id', '=', 'reservations.reservation_id')
-        ->where('reservations.user_id','=',$id)->get();
+        ->where('reservations.user_id','=',$id)
+        ->orderby('reservations.created_at','DESC')->get();
         foreach ($reservations as $reservation)
         {
             $reservation['route']=Route::where('id','=',$reservation->route_id)->first();
-
-
         }
 
-        return view('reservation',compact('reservations'));
+        return view('Reservation',compact('reservations'));
 
     }
 

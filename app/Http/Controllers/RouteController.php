@@ -15,8 +15,17 @@ class RouteController extends Controller
     }
 
     public function index(Request $request){
+        if(!empty($request->routes)){
+            $id=$request->routes;
+        }
+        else{
         $uri = \Request::getRequestUri();
         $id = parse_url($uri)['query'];
+        if (empty($id)) {
+            $id=$request->routes;
+            return $routes;
+        }
+    }
         $selected = Route::find($id); //for check choice
         $routes=Route::all();
         if($selected){
