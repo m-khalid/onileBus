@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -46,4 +47,10 @@
         </div>
     </div>
 </div>
+@if(session()->has('error'))
+<br>
+    <div style="text-align: center;width:30%;margin-left:520px"class="alert alert-danger">
+        {{ session()->get('error') }}
+    </div>
+@endif
 @endsection

@@ -31,7 +31,7 @@ class ReservationController extends Controller
     {
         // return $request->time;
 
-
+    if($request->time!="time"){
        $reservation= new Reservation;
        $reservation->reservation_id=$request->time;
        $reservation->status=0;
@@ -39,8 +39,9 @@ class ReservationController extends Controller
        $reservation->receipt_number=rand(10000, 99999);
        $reservation->save();
         $message="pending";
-return $this->index();
-
+        return $this->index();
+        }
+        return redirect()->back()->with('error', 'Please Choose a Time to continue');
     }
 
 }
