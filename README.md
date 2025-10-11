@@ -1,57 +1,58 @@
-# online Buses 
->In development phase
-## Simple online Buses system for users
-The idea of this application to manage routes and times for Buses :
-- Users can register in application
-- User can search for Routes
-- Users can Book any Routes and pending the request until the admin active these requests by receipt number
-- Admin can active the request by input the receipt number 
-- Add new Buses Route By Admin
+# Dynamic Query & Search System
+>A fully dynamic query and search platform built with Django, designed to eliminate developer involvement for new reports or queries.- Users can register in application
+##Layers:
+
+#### Admin Dashboard (Configuration Layer):
+
+- Configure databases, tables, columns, joins, filters, and limits.
+
+- Customize search and result screens dynamically.
+
+#### User Interface (Execution Layer):
+
+- End users can perform searches and view results based on admin configurations.
+
+- Query screens and result views are generated automatically.
 
 ## Requirements:
-1. Composer version 2.1.14 or higher
-2. PHP 7.4.21 or higher
-3. Xampp 7.4.21-0 or higher
+1. Python: 3.10+
+2. Django: 4.x or higher
+3. PostgreSQL: 12+
 
 ## Installation :
 
 ```
-cp .env.example .env
+python -m venv venv
 ```
 ```
-composer install
+venv\Scripts\activate
 ```
 ```
-php artisan key:generate
+venv\Scripts\activate
 ```
 ```
-php artisan migrate
+django-admin --version
 ```
 ```
-php artisan cache:clear
+pip install django djangorestframework pillow
 ```
 ```
-php artisan config:clear
+django-admin startproject reports
+```
+```
+python manage.py migrate
+```
+```
+pip install django-autocomplete-light
+```
+```
+python manage.py runserver
 ```
 ## Usage:
-- go to project directory atind run:
-```
-php artisan serve
-```
 - go to
 ```
-http://127.0.0.1:8000/
-http://127.0.0.1:8000/admin/login
-```
-- For trial
-```
-https://onlinebusesss.000webhostapp.com/public/login
-https://onlinebusesss.000webhostapp.com/public/admin/login
-```
--Admin credentials 
-```
-email:admin@admin.com
-password:12345678
+http://127.0.0.1:8000/pages/reports/
+http://127.0.0.1:8000/admin/pages/report/
 ```
 
 
