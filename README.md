@@ -46,6 +46,13 @@ python manage.py migrate
 pip install django-autocomplete-light
 ```
 ```
+python manage.py createsuperuser
+```
+```
+python manage.py collectstatic
+```
+```
+
 python manage.py runserver
 ```
 ## Usage:
